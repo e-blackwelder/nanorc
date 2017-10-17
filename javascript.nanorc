@@ -1,25 +1,59 @@
-syntax "JavaScript" "\.js$"
+syntax "JavaScript" "\.(js)$"
 
-color blue   "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
-color blue   "\<[-+]?([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
-color blue   "\<[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
-color brightblue "[A-Za-z_][A-Za-z0-9_]*[[:space:]]*[(]"
-color cyan  "\<(break|case|catch|continue|default|delete|do|else|finally)\>"
-color cyan  "\<(for|function|get|if|in|instanceof|new|return|set|switch)\>"
-color cyan  "\<(switch|this|throw|try|typeof|var|void|while|with)\>"
-color cyan  "\<(null|undefined|NaN)\>"
-color cyan  "\<(import|as|from|export)\>"
-color cyan  "\<(const|let|class|extends|get|set|of|async|await|yield)\>"
-color brightcyan "\<(true|false)\>"
-color green     "\<(Array|Boolean|Date|Enumerator|Error|Function|Math)\>"
-color green     "\<(Map|WeakMap|Set|WeakSet|Promise|Symbol)\>"
-color green     "\<(Number|Object|RegExp|String)\>"
-color red "[-+/*=<>!~%?:&|]"
-color magenta   "/[^*]([^/]|(\\/))*[^\\]/[gim]*"
-color magenta   "\\[0-7][0-7]?[0-7]?|\\x[0-9a-fA-F]+|\\[bfnrt'"\?\\]"
-color brightblack "(^|[[:space:]])//.*"
-color brightblack "/\*.+\*/"
-color brightwhite,cyan "TODO:?"
-color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'|(`|\})(\\.|[^`$]|$[^{])*(\$\{|`)"
+## Default
+color black "^.+$"
+
+## Decimal, cotal and hexadecimal numbers
+color yellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
+
+## Floating point number with at least one digit before decimal point
+color yellow "\<[-+]?([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
+color yellow "\<[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
+
+## Function name/call
+color brightblue "function[[:space:]]+[A-Za-z_][A-Za-z0-9_]*"
+color brightgreen "\<(function|)\>"
+color brightcyan "=>"
+
+## Keywords
+color cyan "\<(module|exports|import|export|as|from)\>"
+color green "\<(const|let)\>"
+color brightcyan "\<(await|async)\>"
+color brightgreen "\<(constructor|class|extends|static|get|set)\>"
+color brightgreen "\<(for|if|else|while|do|of|in|switch|case|default|try|finally|catch)\>"
+color cyan "\<(instanceof|typeof|void)\>"
+color red "\<(return|break|case|continue|yield|throw)\>"
+color blue "\<(this)\>"
+color white,red "\<(var|with|eval)\>"
+color white,red "=="
+color brightblack "(===|!==)"
+color white,red "!==="
+
+## Type specifiers
+color green "\<(Array|Boolean|Date|Enumerator|Error|Function|Math)\>"
+color green "\<(WeakMap|Map|WeakSet|Set|Symbol|Promise)\>"
+color green "\<(Number|Object|RegExp|String)\>"
+color blue "\<(true|false)\>"
+color red "\<(null|undefined|NaN|Infinity)\>"
+
+## String
+color blue "L?\"(\\"|[^"])*\""
+color blue "L?'(\'|[^'])*'"
+color brightgreen start="`" end="`"
+color brightblue start="\$\{" end="\}"
+
+## Trailing spaces
 color ,green "[[:space:]]+$"
-color ,red "	+ +| +	+"
+
+## Escapes
+color red "\\[0-7][0-7]?[0-7]?|\\x[0-9a-fA-F]+|\\[bfnrt'"\?\\]"
+
+## RegExp
+color magenta   "/[^*]([^/]|(\\/))*[^\\]/[gim]*"
+
+## Comments
+color brightyellow start="/\*" end="\*/"
+color brightyellow "//.*$"
+
+## Tabs
+color ,red "	+"
