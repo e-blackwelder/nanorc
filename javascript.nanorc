@@ -16,17 +16,19 @@ color brightgreen "\<(function|)\>"
 color brightcyan "=>"
 
 ## Keywords
-color cyan "\<(module|exports|import|export|as|from)\>"
-color green "\<(const|let)\>"
-color brightcyan "\<(await|async)\>"
-color brightgreen "\<(constructor|class|extends|static|get|set)\>"
+color green "\<(module|exports|import|export|as|from)\>"
+color brightgreen "\<(const|let)\>"
+color brightgreen "\<(constructor|class|extends|get|set)\>"
 color brightgreen "\<(for|if|else|while|do|of|in|switch|case|default|try|finally|catch)\>"
 color cyan "\<(instanceof|typeof|void)\>"
-color red "\<(return|break|case|continue|yield|throw)\>"
+color blue "\<(return|break|case|continue|yield|throw)\>"
+color brightcyan "\<(static|await|async|new)\>"
 color blue "\<(this)\>"
+
+## Warnings
 color white,red "\<(var|with|eval)\>"
 color white,red "=="
-color brightblack "(===|!==)"
+color black "(===|!==)"
 color white,red "!==="
 
 ## Type specifiers
@@ -35,12 +37,6 @@ color green "\<(WeakMap|Map|WeakSet|Set|Symbol|Promise)\>"
 color green "\<(Number|Object|RegExp|String)\>"
 color blue "\<(true|false)\>"
 color red "\<(null|undefined|NaN|Infinity)\>"
-
-## String
-color blue "L?\"(\\"|[^"])*\""
-color blue "L?'(\'|[^'])*'"
-color brightgreen start="`" end="`"
-color brightblue start="\$\{" end="\}"
 
 ## Trailing spaces
 color ,green "[[:space:]]+$"
@@ -54,6 +50,12 @@ color magenta   "/[^*]([^/]|(\\/))*[^\\]/[gim]*"
 ## Comments
 color brightyellow start="/\*" end="\*/"
 color brightyellow "//.*$"
+
+## String
+color blue "L?\"(\\"|[^"])*\""
+color blue "L?'(\'|[^'])*'"
+color brightgreen start="`" end="`"
+color brightblue start="\$\{" end="\}"
 
 ## Tabs
 color ,red "	+"
