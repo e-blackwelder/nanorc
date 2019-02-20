@@ -1,7 +1,7 @@
 syntax "JavaScript" "\.(js)$"
 
 ## Default
-color black "^.+$"
+color white "^.+$"
 
 ## Decimal, cotal and hexadecimal numbers
 color yellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
@@ -28,7 +28,7 @@ color blue "\<(this)\>"
 ## Warnings
 color white,red "\<(var|with|eval)\>"
 color white,red "=="
-color black "(===|!==)"
+color white "(===|!==)"
 color white,red "!==="
 
 ## Type specifiers

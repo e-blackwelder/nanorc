@@ -1,4 +1,4 @@
-syntax "Email"
+syntax "Email" "\.eml$"
 
 color magenta "^>([^>].*|$)"
 color blue "^>>([^>].*|$)"

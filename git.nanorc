@@ -16,7 +16,7 @@ color ,red "	+"
 # A nano configuration file to enable syntax highlighting of some Git specific
 # files with the GNU nano text editor (http://www.nano-editor.org)
 #
-syntax "git-commit" "COMMIT_EDITMSG|TAG_EDITMSG"
+syntax "git-commit" "(COMMIT_EDITMSG|TAG_EDITMSG)$"
 
 # Commit message
 color yellow ".*"

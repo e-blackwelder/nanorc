@@ -25,7 +25,7 @@ color brightmagenta  "^#{1,6}.*"
 color blue   "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
 
 # leading whitespace
-color black    "^[[:space:]]+"
+##color black    "^[[:space:]]+"
 
 # misc
 color magenta   "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
